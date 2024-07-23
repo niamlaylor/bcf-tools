@@ -6,9 +6,20 @@ import { useEffect, useState } from 'react';
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const [bcfResponse, setBcfResponse] = useState('No response yet');
+
   useEffect(() => {
     axios.get('/api/bcf')
-  });
+      .then((response) => {
+        setBcfResponse(response);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []); 
+  
   return (
     <main>
       <Head>
