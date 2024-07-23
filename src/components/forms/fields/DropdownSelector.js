@@ -12,7 +12,10 @@ export default function DropdownSelector( {children, options, handleImportant, h
       <div className="relative">
         <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
           {options.map((option, index) => (
-            <Option key={index} optionText={option} />
+            <Option 
+              key={index} 
+              optionText={option}
+            />
           ))}
         </select>
         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
