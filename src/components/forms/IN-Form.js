@@ -12,5 +12,5 @@ export default function ImportantNotesForm() {
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
