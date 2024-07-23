@@ -13,7 +13,7 @@ export default function Home() {
     axios.get('/api/bcf')
       .then((response) => {
         setBcfResponse(response);
-        console.log(response.data);
+        console.log(response.data.routes);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
