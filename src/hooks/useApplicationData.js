@@ -9,16 +9,12 @@ export default function useApplicationData() {
   const setIsImportant = important => setState({ ...state, important });
 
   const handleImportant = () => {
-    setIsImportant(true);
-  };
-  const handleInformational = () => {
-    setIsImportant(false);
+    setIsImportant(!state.important);
   };
 
   return {
     state,
     handleImportant,
-    handleInformational,
   };
 
 }
