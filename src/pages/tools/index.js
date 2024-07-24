@@ -8,7 +8,7 @@ export default function ToolsLanding() {
   const {
     state,
     handleImportant,
-    handleInformational,
+    handleFieldOne,
   } = useApplicationData();
 
   useEffect(() => {
@@ -22,10 +22,11 @@ export default function ToolsLanding() {
         <meta name="description" content="Home of all tools BCF to make our lives easier." />
       </Head>
       <ImportantNotesForm
-        handleImportant={handleImportant}
+        handleFieldOne={handleFieldOne}
+        fieldOneSelection={state.fieldOneSelection}
       />
-      <div onClick={() => handleImportant()}>
-        {state.important && `<div style="border: 1px solid #cfd9de; border-radius: 10px; padding: 20px 20px 15px 20px; margin-bottom: 30px;">
+      <div>
+        {state.fieldOneSelection === "Important" && `<div style="border: 1px solid #cfd9de; border-radius: 10px; padding: 20px 20px 15px 20px; margin-bottom: 30px;">
             <span class="bcf bcf-icon-notice-outline bcf-vertical-middle dark-blue-color" style="width: 45px; font-size: 36px; margin-top: -5px;">&ZeroWidthSpace;</span><b class="dark-blue-color" style="font-size: 16px;">IMPORTANT NOTICE</b>
             <p class="font-size-14" style="margin-top: 10px;"><b class="font-size-16 dark-blue-color">Current conditions added on more routes</b></p>
 
@@ -37,7 +38,7 @@ export default function ToolsLanding() {
                 <strong><a href="https://www.bcferries.com/service-notice-changes" target="_blank">Learn more</a></strong>
             </p>
           </div>`}
-        {!state.important && `<div style="border: 1px solid #cfd9de; border-radius: 10px; padding: 20px 20px 15px 20px; margin-bottom: 30px;">
+        {state.fieldOneSelection === "Informational" && `<div style="border: 1px solid #cfd9de; border-radius: 10px; padding: 20px 20px 15px 20px; margin-bottom: 30px;">
             <span class="bcf bcf-icon-info-outline bcf-vertical-middle dark-blue-color" style="width: 45px; font-size: 36px; margin-top: -5px;">&ZeroWidthSpace;</span><b class="dark-blue-color" style="font-size: 16px;">IMPORTANT NOTICE</b>
             <p class="font-size-14" style="margin-top: 10px;"><b class="font-size-16 dark-blue-color">Current conditions added on more routes</b></p>
 
